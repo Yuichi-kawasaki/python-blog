@@ -1,0 +1,20 @@
+{% extends 'base.html' %} # 親 template の指定
+
+{% block content %} # 中身の記述開始
+...各 template 固有の記述...
+<p>{{ post.title }}</p>
+<form action="" method="POST">
+    <table class="table">
+        <tr>
+          <th>タイトル</th>
+          <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+          <th>本文</th>
+          <td>{{ form.text }}</td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">送信</button>
+    {% csrf_token %}
+  </form>
+  {% endblock %}
